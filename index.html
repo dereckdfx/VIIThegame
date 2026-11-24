@@ -130,7 +130,7 @@
         </p>
       </div>
 
-      <a class="scroll-chevron" href="#trailer" aria-label="Bajar al tráiler">
+      <a class="scroll-chevron" href="#trailer" aria-label="Bajar al tráiler" data-i18n-aria="skipTo">
         <svg viewBox="0 0 24 14" aria-hidden="true" focusable="false">
           <path d="M2 2 L12 12 L22 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -138,7 +138,7 @@
     </section>
   </div>
 
-  <nav class="menu" id="menu" hidden>
+  <nav class="menu" id="menu" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="menu-title">
     <div class="menu-art">
       <picture>
         <source srcset="assets/vii-logo.webp" type="image/webp">
@@ -159,43 +159,19 @@
     </div>
     <div class="menu-panel">
       <div class="menu-panel-top">
-        <p class="menu-title"><span>Grand Theft Auto VII</span></p>
+        <p class="menu-title" id="menu-title"><span data-i18n="menuTitle">Grand Theft Auto VII</span></p>
         <button type="button" class="menu-close" data-menu-close aria-label="Cerrar" data-i18n-aria="close">
           <span aria-hidden="true">×</span>
         </button>
       </div>
       <ul class="menu-list">
         <li><a href="#inicio" data-i18n="navHome">Inicio</a></li>
-        <li class="has-sub">
-          <button type="button" class="menu-link" data-sub aria-expanded="false">
-            <span data-i18n="navWatch">Ver</span> <i class="chev" aria-hidden="true">›</i>
-          </button>
-          <ul class="sub">
-            <li><a href="#trailer" data-i18n="navTrailer">Tráiler</a></li>
-            <li><a href="#vistazo" data-i18n="navGlance">Un vistazo</a></li>
-          </ul>
-        </li>
-        <li><a href="#edicion" data-i18n="navEdition">Edición definitiva</a></li>
-        <li class="has-sub">
-          <button type="button" class="menu-link" data-sub aria-expanded="false">
-            <span data-i18n="navOnly">Solo en Vinewood</span> <i class="chev" aria-hidden="true">›</i>
-          </button>
-          <ul class="sub">
-            <li><a href="#solo-en-vinewood" data-i18n="navStory">Vinewood, USA</a></li>
-            <li><a href="#lugares" data-i18n="navPlaces">Lugares</a></li>
-            <li><a href="#personajes" data-i18n="navCast">Personajes</a></li>
-          </ul>
-        </li>
-        <li class="has-sub">
-          <button type="button" class="menu-link" data-sub aria-expanded="false">
-            <span data-i18n="navMedia">Media</span> <i class="chev" aria-hidden="true">›</i>
-          </button>
-          <ul class="sub">
-            <li><a href="#vistazo" data-i18n="navShots">Capturas</a></li>
-            <li><a href="#trailer" data-i18n="navTrailer">Tráiler</a></li>
-          </ul>
-        </li>
+        <li><a href="#trailer" data-i18n="navWatch">Ver</a></li>
+        <li><a href="#edicion" data-i18n="navEdition">Edición especial</a></li>
+        <li><a href="#solo-en-vinewood" data-i18n="navOnly">Solo en Vinewood</a></li>
+        <li><a href="#media" data-i18n="navMedia">Media</a></li>
         <li><a href="#musica" data-i18n="navMusic">Música</a></li>
+        <li><a href="novedades.html" data-i18n="navNews">Novedades</a></li>
       </ul>
       <div class="menu-tools">
         <div class="tool">
@@ -232,65 +208,89 @@
         <div>
           <p class="eyebrow" data-i18n="eyetape">Cinta</p>
           <h2 data-i18n="navTrailer">Tráiler</h2>
-          <p class="lede" data-i18n="trailerLede">Aún no hay un tráiler. Cuando exista, lo verás primero aquí.</p>
+          <p class="lede" data-i18n="trailerLede">Mientras llega el tráiler, puedes reproducir este recorte animado de la portada.</p>
         </div>
       </div>
-      <div class="trailer-frame reveal">
-        <button type="button" class="trailer-play" data-trailer-open aria-label="Reproducir tráiler, próximamente">
-          <picture>
-            <source srcset="assets/hero.webp" type="image/webp">
-            <img src="assets/hero.jpg" alt="Fotograma de portada: el collage de la ciudad al atardecer." width="1665" height="944" loading="lazy">
-          </picture>
-          <span class="play-btn" aria-hidden="true">
-            <svg viewBox="0 0 72 72" focusable="false">
-              <circle cx="36" cy="36" r="34" fill="none" stroke="currentColor" stroke-width="1.4"/>
-              <path d="M30 22 L52 36 L30 50 Z" fill="currentColor"/>
-            </svg>
-          </span>
-          <span class="trailer-caption" data-i18n="soon">Próximamente</span>
-        </button>
+      <div class="player player-hero reveal" data-player>
+          <video playsinline preload="metadata" poster="assets/hero.webp" data-src="assets/video/trailer.mp4">
+            <source src="assets/video/placeholder.webm" type="video/webm">
+            <source src="assets/video/placeholder.mp4" type="video/mp4">
+          </video>
+          <div class="player-ui">
+            <button type="button" class="player-btn" data-play aria-label="Reproducir" data-i18n-aria="play">▶</button>
+            <div class="player-progress-wrap">
+              <input type="range" data-progress min="0" max="1000" value="0" aria-label="Progreso" data-i18n-aria="progress">
+            </div>
+            <span class="player-time" data-time>0:00 / 0:08</span>
+            <button type="button" class="player-btn" data-mute aria-label="Silenciar" data-i18n-aria="mute">🔊</button>
+          </div>
       </div>
     </section>
 
     <section class="section gallery" id="vistazo">
-      <button type="button" class="glance-hero reveal" data-trailer-open>
-        <picture>
-          <source srcset="assets/hero.webp" type="image/webp">
-          <img class="crop crop-glance" src="assets/hero.jpg" alt="Un recorte del muelle y la lancha al atardecer." width="1665" height="944" loading="lazy">
-        </picture>
-        <div class="glance-copy">
-          <p class="glance-kicker" data-i18n="navWatch">Ver</p>
-          <h2 data-i18n="glanceTitle">Un vistazo más a fondo</h2>
-          <span class="play-pill"><span aria-hidden="true">▶</span> <span data-i18n="play">Reproducir</span></span>
-        </div>
-      </button>
-      <div class="glance-row">
-        <button type="button" class="glance-card reveal" data-trailer-open>
-          <picture>
-            <source srcset="assets/hero.webp" type="image/webp">
-            <img class="crop crop-t1" src="assets/hero.jpg" alt="Recorte del helicóptero sobre la ciudad." width="1665" height="944" loading="lazy">
-          </picture>
-          <span class="play-round" aria-hidden="true">▶</span>
-          <span class="glance-label">Tráiler 1</span>
-        </button>
-        <button type="button" class="glance-card reveal" data-trailer-open>
-          <picture>
-            <source srcset="assets/hero.webp" type="image/webp">
-            <img class="crop crop-t2" src="assets/hero.jpg" alt="Recorte del auto amarillo en la noche." width="1665" height="944" loading="lazy">
-          </picture>
-          <span class="play-round" aria-hidden="true">▶</span>
-          <span class="glance-label">Tráiler 2</span>
-        </button>
-        <button type="button" class="glance-card reveal" data-trailer-open>
-          <picture>
-            <source srcset="assets/hero.webp" type="image/webp">
-            <img class="crop crop-t3" src="assets/hero.jpg" alt="Recorte de las patrullas en el centro." width="1665" height="944" loading="lazy">
-          </picture>
-          <span class="play-round" aria-hidden="true">▶</span>
-          <span class="glance-label">Tráiler 3</span>
-        </button>
+      <div class="player player-hero reveal" data-player>
+          <video playsinline preload="metadata" poster="assets/hero.webp" data-src="assets/video/trailer.mp4">
+            <source src="assets/video/placeholder.webm" type="video/webm">
+            <source src="assets/video/placeholder.mp4" type="video/mp4">
+          </video>
+          <div class="player-copy">
+            <p class="glance-kicker" data-i18n="navWatch">Ver</p>
+            <h2 data-i18n="glanceTitle">Un vistazo más a fondo</h2>
+          </div>
+          <div class="player-ui">
+            <button type="button" class="player-btn" data-play aria-label="Reproducir" data-i18n-aria="play">▶</button>
+            <div class="player-progress-wrap">
+              <input type="range" data-progress min="0" max="1000" value="0" aria-label="Progreso" data-i18n-aria="progress">
+            </div>
+            <span class="player-time" data-time>0:00 / 0:08</span>
+            <button type="button" class="player-btn" data-mute aria-label="Silenciar" data-i18n-aria="mute">🔊</button>
+          </div>
       </div>
-    </section>
+      <div class="glance-row">
+        <div class="player player-card reveal" data-player>
+          <video playsinline preload="metadata" poster="assets/hero.webp" data-src="assets/video/trailer.mp4">
+            <source src="assets/video/placeholder.webm" type="video/webm">
+            <source src="assets/video/placeholder.mp4" type="video/mp4">
+          </video>
+          <div class="player-ui">
+            <button type="button" class="player-btn" data-play aria-label="Reproducir" data-i18n-aria="play">▶</button>
+            <div class="player-progress-wrap">
+              <input type="range" data-progress min="0" max="1000" value="0" aria-label="Progreso" data-i18n-aria="progress">
+            </div>
+            <span class="player-time" data-time>0:00 / 0:08</span>
+            <button type="button" class="player-btn" data-mute aria-label="Silenciar" data-i18n-aria="mute">🔊</button>
+          </div>
+        </div>
+        <div class="player player-card reveal" data-player>
+          <video playsinline preload="metadata" poster="assets/hero.webp" data-src="assets/video/trailer.mp4">
+            <source src="assets/video/placeholder.webm" type="video/webm">
+            <source src="assets/video/placeholder.mp4" type="video/mp4">
+          </video>
+          <div class="player-ui">
+            <button type="button" class="player-btn" data-play aria-label="Reproducir" data-i18n-aria="play">▶</button>
+            <div class="player-progress-wrap">
+              <input type="range" data-progress min="0" max="1000" value="0" aria-label="Progreso" data-i18n-aria="progress">
+            </div>
+            <span class="player-time" data-time>0:00 / 0:08</span>
+            <button type="button" class="player-btn" data-mute aria-label="Silenciar" data-i18n-aria="mute">🔊</button>
+          </div>
+        </div>
+        <div class="player player-card reveal" data-player>
+          <video playsinline preload="metadata" poster="assets/hero.webp" data-src="assets/video/trailer.mp4">
+            <source src="assets/video/placeholder.webm" type="video/webm">
+            <source src="assets/video/placeholder.mp4" type="video/mp4">
+          </video>
+          <div class="player-ui">
+            <button type="button" class="player-btn" data-play aria-label="Reproducir" data-i18n-aria="play">▶</button>
+            <div class="player-progress-wrap">
+              <input type="range" data-progress min="0" max="1000" value="0" aria-label="Progreso" data-i18n-aria="progress">
+            </div>
+            <span class="player-time" data-time>0:00 / 0:08</span>
+            <button type="button" class="player-btn" data-mute aria-label="Silenciar" data-i18n-aria="mute">🔊</button>
+          </div>
+        </div>
+      </div>
+        </section>
 
     <section class="scene-bleed" id="la-pareja" aria-label="Lila y Adrián">
       <div class="scene-frame" data-couple>
@@ -317,8 +317,8 @@
           </picture>
         </div>
         <div class="edition-copy">
-          <p class="feat-label" data-i18n="navEdition">Edición definitiva</p>
-          <h2 class="feat-title" data-i18n="editionTitle">Edición definitiva</h2>
+          <p class="feat-label" data-i18n="navEdition">Edición especial</p>
+          <h2 class="feat-title" data-i18n="editionTitle">Edición especial</h2>
           <p class="feat-line" data-i18n="editionLine">Todo el mapa, todas las historias y el atardecer completo.</p>
           <a class="pill-peach" href="#proximamente" data-i18n="seeMore">Ver más →</a>
         </div>
@@ -507,7 +507,7 @@
           <p class="feat-label" data-i18n="navMusic">Música</p>
           <h2 class="feat-title" data-i18n="musicTitle">Radio, banda sonora y música</h2>
           <p class="feat-line">Emisoras inventadas para esta página de fan, con el volumen del muelle.</p>
-          <a class="pill-peach" href="#musica" data-i18n="exploreMore">Explorar más →</a>
+          <button type="button" class="pill-peach" data-open-dialog="radio-dialog" data-i18n="exploreMore">Explorar más →</button>
         </div>
       </article>
     </section>
@@ -529,7 +529,7 @@
       </article>
     </section>
 
-    <section class="section features" id="descargas">
+    <section class="section features" id="media">
       <article class="edition-card reveal">
         <div class="edition-visual">
           <picture>
@@ -575,19 +575,19 @@
         <div class="edition-copy">
           <p class="feat-label">Comunidad</p>
           <h2 class="feat-title">VII Club</h2>
-          <p class="feat-line">Una membresía de fan inventada: avisos, fondos y un rincón para quienes siguen la página.</p>
-          <a class="pill-peach" href="#proximamente">Ver beneficios →</a>
+          <p class="feat-line" data-i18n="clubLine">Una membresía de fan inventada: avisos, fondos y un rincón para quienes siguen la página.</p>
+          <button type="button" class="pill-peach" data-open-dialog="club-dialog" data-i18n="clubBenefits">Ver beneficios →</button>
         </div>
       </article>
     </section>
 
     <section class="section shop" id="tienda">
       <div class="row-head reveal">
-        <h2 class="row-title peach">Tienda</h2>
-        <a class="row-more" href="#tienda">Ver todo →</a>
+        <h2 class="row-title peach" data-i18n="shop">Tienda</h2>
+        <a class="row-more" href="#tienda" data-soon data-i18n="seeAll">Ver todo →</a>
       </div>
       <div class="shop-grid">
-        <article class="shop-card reveal">
+        <article class="shop-card reveal" tabindex="0" data-soon role="button">
           <div class="shop-art merch-art" aria-hidden="true">
             <svg viewBox="0 0 320 220" class="embroidery">
               <defs>
@@ -601,9 +601,9 @@
             </svg>
           </div>
           <p class="feat-label">Mercancía</p>
-          <h3 class="feat-title">Ropa, coleccionables y más</h3>
+          <h3 class="feat-title" data-i18n="merchTitle">Ropa, coleccionables y más</h3>
         </article>
-        <article class="shop-card reveal">
+        <article class="shop-card reveal" tabindex="0" data-soon role="button">
           <div class="shop-art box-art" aria-hidden="true">
             <svg viewBox="0 0 320 220" class="sticker">
               <rect width="320" height="220" fill="#1c1432"/>
@@ -616,40 +616,40 @@
             </svg>
           </div>
           <p class="feat-label">Caja de colección</p>
-          <h3 class="feat-title">La colección Vinewood</h3>
+          <h3 class="feat-title" data-i18n="boxTitle">La colección Vinewood</h3>
         </article>
       </div>
     </section>
 
     <section class="section news" id="noticias">
       <div class="row-head reveal">
-        <h2 class="row-title pink">Noticias destacadas</h2>
-        <a class="row-more" href="#noticias">Ver todo →</a>
+        <h2 class="row-title pink" data-i18n="featuredNews">Noticias destacadas</h2>
+        <a class="row-more" href="#noticias" data-soon data-i18n="seeAll">Ver todo →</a>
       </div>
       <div class="news-grid">
-        <article class="news-card reveal">
+        <article class="news-card reveal" tabindex="0" data-soon role="button">
           <picture>
             <source srcset="assets/hero.webp" type="image/webp">
             <img class="crop crop-couple-wide" src="assets/hero.jpg" alt="Lila y Adrián en el cartel de la página." width="1665" height="944" loading="lazy">
           </picture>
           <p class="news-date">23 de noviembre de 2026</p>
-          <h3>La página de fan ya muestra su primer cartel al atardecer</h3>
+          <h3 data-i18n="news1">La página de fan ya muestra su primer cartel al atardecer</h3>
         </article>
-        <article class="news-card reveal">
+        <article class="news-card reveal" tabindex="0" data-soon role="button">
           <picture>
             <source srcset="assets/hero.webp" type="image/webp">
             <img class="crop crop-centro" src="assets/hero.jpg" alt="El centro de noche, con patrullas y un helicóptero." width="1665" height="944" loading="lazy">
           </picture>
           <p class="news-date">21 de noviembre de 2026</p>
-          <h3>Así imaginamos las noches del centro, sin sirenas de verdad</h3>
+          <h3 data-i18n="news2">Así imaginamos las noches del centro, sin sirenas de verdad</h3>
         </article>
-        <article class="news-card reveal">
+        <article class="news-card reveal" tabindex="0" data-soon role="button">
           <picture>
             <source srcset="assets/hero.webp" type="image/webp">
             <img class="crop crop-muelle" src="assets/hero.jpg" alt="La lancha frente al muelle y la noria." width="1665" height="944" loading="lazy">
           </picture>
           <p class="news-date">18 de noviembre de 2026</p>
-          <h3>Un muelle de papel: lo que hay detrás de esta visión de fan</h3>
+          <h3 data-i18n="news3">Un muelle de papel: lo que hay detrás de esta visión de fan</h3>
         </article>
       </div>
     </section>
@@ -657,16 +657,16 @@
     <section class="section soon" id="proximamente">
       <div class="soon-card reveal">
         <p class="idx">04</p>
-        <p class="eyebrow">Lanzamiento</p>
+        <p class="eyebrow" data-i18n="launch">Lanzamiento</p>
         <h2 data-i18n="soon">Próximamente</h2>
-        <p class="lede">Una visión de fan de lo que podría ser GTA VII. Fecha por anunciarse.</p>
+        <p class="lede" data-i18n="soonLede">Una visión de fan de lo que podría ser GTA VII. Fecha por anunciarse.</p>
         <p class="platforms">PS5 · Xbox Series X|S · PC</p>
         <form class="soon-form" id="aviso-form" novalidate>
-          <p class="form-note">Este aviso es solo de esta página de fan. No está vinculado a un lanzamiento oficial.</p>
+          <p class="form-note" data-i18n="formNote">Este aviso es solo de esta página de fan. No está vinculado a un lanzamiento oficial.</p>
           <label class="sr-only" for="aviso-nombre">Nombre</label>
-          <input id="aviso-nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" maxlength="80">
+          <input id="aviso-nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" data-i18n-placeholder="formName" maxlength="80">
           <label class="sr-only" for="aviso-correo">Correo</label>
-          <input id="aviso-correo" name="correo" type="email" autocomplete="email" placeholder="Tu correo" required maxlength="120">
+          <input id="aviso-correo" name="correo" type="email" autocomplete="email" placeholder="Tu correo" data-i18n-placeholder="formEmail" required maxlength="120">
           <button type="submit" class="btn-reserve" data-i18n="notify">Quiero enterarme</button>
           <p class="form-status" data-form-status role="status" aria-live="polite"></p>
         </form>
@@ -682,61 +682,71 @@
       </picture>
     </p>
     <form class="news-box" id="news-form" novalidate>
-      <p class="news-box-title">Recibe las noticias de VII</p>
-      <p class="news-box-note">Solo se guarda en este dispositivo. No es un boletín oficial.</p>
+      <p class="news-box-title" data-i18n="newsBoxTitle">Recibe las noticias de VII</p>
+      <p class="news-box-note" data-i18n="newsBoxNote">Solo se guarda en este dispositivo. No es un boletín oficial.</p>
       <div class="news-box-row">
         <label class="sr-only" for="news-mail">Correo</label>
-        <input id="news-mail" type="email" name="correo" placeholder="Tu correo" required maxlength="120">
-        <button type="submit" class="btn-reserve">Enviar</button>
+        <input id="news-mail" type="email" name="correo" placeholder="Tu correo" data-i18n-placeholder="formEmail" required maxlength="120">
+        <button type="submit" class="btn-reserve" data-i18n="send">Enviar</button>
       </div>
       <p class="form-status" data-news-status role="status" aria-live="polite"></p>
     </form>
     <ul class="socials" aria-label="Redes">
-      <li><a href="#" aria-label="X">
+      <li><a href="#" data-soon aria-label="X">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M3 3h5.2l4.1 5.7L16.8 3H21l-6.6 8.4L21.5 21h-5.2l-4.5-6.2L6.1 21H2l7.2-9.2z"/></svg>
       </a></li>
-      <li><a href="#" aria-label="Instagram">
+      <li><a href="#" data-soon aria-label="Instagram">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg>
       </a></li>
-      <li><a href="#" aria-label="YouTube">
+      <li><a href="#" data-soon aria-label="YouTube">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path fill="currentColor" d="M10 9.5v5l5-2.5z"/></svg>
       </a></li>
-      <li><a href="#" aria-label="TikTok">
+      <li><a href="#" data-soon aria-label="TikTok">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M14 4v10.2a3.2 3.2 0 1 1-2.4-3.1V8.2A6.4 6.4 0 0 0 16.7 11V8.3A6.5 6.5 0 0 0 20 7.5V4.8A6.5 6.5 0 0 1 14 4Z" fill="currentColor"/></svg>
       </a></li>
-      <li><a href="#" aria-label="Facebook">
+      <li><a href="#" data-soon aria-label="Facebook">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-5 2.2-5 5v2H6v4h3v7h4v-7h3l1-4h-4V9c0-.6.4-1 1-1z"/></svg>
       </a></li>
-      <li><a href="#" aria-label="Twitch">
+      <li><a href="#" data-soon aria-label="Twitch">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M5 3 3 7v12h5v3h3l3-3h4l4-4V3H5zm14 11-2 2h-5l-3 3v-3H7V5h12v9zM15 7h2v5h-2V7zm-5 0h2v5h-2V7z"/></svg>
       </a></li>
-      <li><a href="#" aria-label="Discord">
+      <li><a href="#" data-soon aria-label="Discord">
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M8 7c3-1 5-1 8 0l1 3c2 3 2 6 2 6l-3 1-1-2c-2 1-4 1-6 0l-1 2-3-1s0-3 2-6l1-3zm1.6 5.2a1.3 1.3 0 1 0 0-2.6 1.3 1.3 0 0 0 0 2.6zm5.8 0a1.3 1.3 0 1 0 0-2.6 1.3 1.3 0 0 0 0 2.6z"/></svg>
       </a></li>
     </ul>
     <p class="footer-links">
-      <a href="#legal">Aviso de privacidad</a>
-      <a href="#legal">Cookies</a>
-      <a href="#legal">Legal</a>
+      <a href="privacidad.html" data-i18n="privacy">Aviso de privacidad</a>
+      <a href="cookies.html" data-i18n="cookies">Cookies</a>
+      <a href="legal.html" data-i18n="legal">Legal</a>
     </p>
     <p class="disclaimer" id="legal">Proyecto de fan no oficial. No afiliado con Rockstar Games ni Take-Two Interactive.</p>
     <p class="footer-legal">Grand Theft Auto, GTA y los demás nombres y marcas relacionados son propiedad de sus respectivos dueños. Este sitio es un homenaje de fan, hecho de manera independiente y sin fines de lucro.</p>
   </footer>
 
-  <div class="lightbox" id="lightbox" hidden>
-    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
-      <button type="button" class="lightbox-close" data-trailer-close aria-label="Cerrar">Cerrar</button>
-      <div class="lightbox-stage">
-        <picture>
-          <source srcset="assets/hero.webp" type="image/webp">
-          <img src="assets/hero.jpg" alt="" width="1665" height="944">
-        </picture>
-      </div>
-      <h2 id="lightbox-title">El tráiler se publicará pronto</h2>
-      <p>Todavía no hay un video. Esta es solo una vista de la portada, a la espera de una cinta propia.</p>
-    </div>
-  </div>
 
+  <dialog class="site-dialog" id="club-dialog">
+    <h2 data-i18n="clubTitle">Beneficios del VII Club</h2>
+    <ul>
+      <li>Avisos de esta página de fan, guardados solo en tu dispositivo.</li>
+      <li>Fondos recortados del cartel, para uso personal.</li>
+      <li>Un rincón en el muro de Novedades para dejar un recado.</li>
+    </ul>
+    <button type="button" class="btn-reserve" data-close-dialog data-i18n="close">Cerrar</button>
+  </dialog>
+
+  <dialog class="site-dialog" id="radio-dialog">
+    <h2 data-i18n="radioTitle">Emisoras de Vinewood</h2>
+    <ul>
+      <li>Muelle 64 — salitre, bajo y atardecer.</li>
+      <li>Neón Central — sincopas que no apagan el centro.</li>
+      <li>Colinas FM — cuerdas suaves sobre las letras del letrero.</li>
+    </ul>
+    <button type="button" class="btn-reserve" data-close-dialog data-i18n="close">Cerrar</button>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="js/config.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>
