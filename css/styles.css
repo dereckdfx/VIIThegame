@@ -17,6 +17,8 @@
   --header-h: 58px;
   --font-display: "Syne", "Segoe UI", sans-serif;
   --font-body: "Outfit", "Segoe UI", sans-serif;
+  --font-ui: "Poppins", "Segoe UI", sans-serif;
+  --font-mark: "Bebas Neue", "Arial Narrow", sans-serif;
 }
 
 *,
@@ -174,10 +176,10 @@ a { color: inherit; }
   z-index: 1;
   margin: 0;
   color: var(--banner-text);
-  font-family: var(--font-body);
+  font-family: var(--font-ui);
   font-weight: 600;
-  font-size: clamp(0.62rem, 1.15vw, 0.82rem);
-  letter-spacing: 0.38em;
+  font-size: 12px;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   text-align: center;
   padding: 0 1rem;
@@ -206,10 +208,12 @@ body.is-menu .site-header {
 .logo { display: inline-flex; align-items: center; text-decoration: none; }
 
 .logo-vii {
-  width: 3.15rem;
-  height: auto;
-  fill: #fff;
-  overflow: visible;
+  font-family: var(--font-mark);
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: #fff;
 }
 
 .nav-toggle {
@@ -300,20 +304,21 @@ body.is-menu .site-header {
 }
 
 .kicker-soon {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(1.15rem, 2vw, 1.55rem);
-  letter-spacing: 0.12em;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.08em;
   color: #fff;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .kicker-sub {
   margin-top: 0.28rem;
-  font-size: 0.72rem;
+  font-family: var(--font-ui);
+  font-size: 12px;
   letter-spacing: 0.22em;
   color: var(--lavender);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .landing-platforms {
@@ -321,11 +326,14 @@ body.is-menu .site-header {
   display: grid;
   justify-items: end;
   gap: 0.22rem;
-  font-size: 0.68rem;
+  font-family: var(--font-ui);
+  font-size: 11px;
   letter-spacing: 0.18em;
   color: #fff;
-  font-weight: 500;
+  font-weight: 600;
 }
+
+.landing-platforms span { white-space: nowrap; }
 
 .btn-reserve {
   display: inline-flex;
@@ -338,9 +346,10 @@ body.is-menu .site-header {
   color: #1a1020;
   text-decoration: none;
   border: 0;
-  font-weight: 600;
-  font-size: 0.82rem;
-  letter-spacing: 0.04em;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.02em;
   cursor: pointer;
   transition: transform 0.35s var(--ease), background 0.3s, box-shadow 0.3s;
   box-shadow: 0 8px 22px rgba(247, 198, 217, 0.18);
@@ -825,7 +834,7 @@ body.is-menu .site-header {
 @media (max-width: 900px) {
   :root { --banner-h: 58px; }
 
-  .banner-text { letter-spacing: 0.16em; font-size: 0.58rem; padding: 0 0.6rem; }
+  .banner-text { font-size: 11px; letter-spacing: 0.16em; padding: 0 0.6rem; }
 
   .poster { width: calc(100% - 0.4rem); }
 
@@ -864,6 +873,7 @@ body.is-menu .site-header {
 @media (max-width: 520px) {
   .section-head { grid-template-columns: 1fr; gap: 0.4rem; }
   .site-header { padding: 0 1rem; }
+  .banner-text { font-size: 10px; letter-spacing: 0.12em; }
 }
 
 @media (max-height: 820px) and (min-width: 901px) {
