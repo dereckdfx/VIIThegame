@@ -824,7 +824,7 @@ body.is-menu .site-header {
   }
 
   .landing-kicker { order: 1; }
-  .btn-reserve { order: 2; }
+  .landing-meta .btn-reserve { order: 2; }
   .landing-platforms {
     order: 3;
     justify-self: center;
@@ -852,6 +852,109 @@ body.is-menu .site-header {
   .section-head { grid-template-columns: 1fr; gap: 0.4rem; }
   .site-header { padding: 0 1rem; }
   .banner-text { font-size: 10px; letter-spacing: 0.12em; }
+}
+
+
+@media (max-width: 768px) {
+  .header-reserve { display: none; }
+
+  .site-header { padding: 0 1.15rem; }
+
+  .landing {
+    justify-content: flex-start;
+    text-align: center;
+    gap: 1.15rem;
+    padding: 0.15rem 0 1.7rem;
+  }
+
+  .landing-meta { display: contents; }
+
+  .landing-kicker {
+    order: 1;
+    text-align: center;
+    padding: 0.15rem 1.2rem 0;
+  }
+
+  .landing .kicker-soon {
+    font-size: clamp(1.7rem, 8vw, 2.05rem);
+    letter-spacing: 0.14em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.05;
+  }
+
+  .landing .kicker-sub {
+    margin-top: 0.42rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    font-weight: 600;
+    color: var(--lavender);
+  }
+
+  .landing .poster {
+    order: 2;
+    width: min(calc(100% - 2.25rem), calc(100dvh - 26rem));
+  }
+
+  .landing .poster-frame {
+    padding: 7px;
+    background: #1a1630;
+    box-shadow:
+      0 0 0 1px rgba(80, 48, 110, 0.7),
+      0 16px 36px rgba(4, 2, 16, 0.5);
+  }
+
+  .landing .poster-frame picture,
+  .landing .poster-frame img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .landing .landing-platforms {
+    order: 3;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+    align-items: center;
+    gap: 1.35rem 1.5rem;
+    width: 100%;
+    padding: 0.15rem 1rem 0;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .landing .btn-reserve {
+    order: 4;
+    min-height: 2.85rem;
+    padding: 0.6rem 1.7rem;
+  }
+
+  .landing .scroll-chevron {
+    order: 5;
+    position: static;
+    transform: none;
+    color: #f7c6d9;
+    width: 1.85rem;
+    height: 1.4rem;
+    margin-top: 0.2rem;
+    opacity: 1;
+    animation: chevronBounceMobile 2.6s ease-in-out infinite;
+  }
+
+  .landing .scroll-chevron svg { stroke-width: 2; }
+}
+
+@keyframes chevronBounceMobile {
+  0%, 100% { transform: translateY(0); opacity: 0.72; }
+  50% { transform: translateY(6px); opacity: 1; }
 }
 
 @media (max-height: 820px) and (min-width: 901px) {
