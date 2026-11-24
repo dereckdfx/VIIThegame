@@ -229,7 +229,7 @@ body.is-menu .site-header {
 
 .logo-mark {
   display: block;
-  height: 32px;
+  height: 24px;
   width: auto;
 }
 
@@ -860,9 +860,9 @@ body.is-menu .site-header {
 @media (max-width: 768px) {
   .header-reserve { display: none; }
 
-  .site-header { padding: 0 1.15rem; }
+  .site-header { padding: 0 1.15rem 0 20px; }
 
-  .logo-mark { height: 30px; }
+  .logo-mark { height: 20px; }
 
   .landing {
     justify-content: flex-start;
