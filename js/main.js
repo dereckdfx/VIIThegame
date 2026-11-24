@@ -6,10 +6,9 @@
   const introMode = params.get("intro");
   const body = document.body;
   const intro = document.getElementById("intro");
-  const header = document.querySelector(".site-header");
-  const nav = document.getElementById("nav");
+  const menu = document.getElementById("menu");
   const navToggle = document.querySelector("[data-nav-toggle]");
-  const heroVisual = document.querySelector("[data-hero-visual]");
+  const poster = document.querySelector("[data-poster]");
   const heroImage = document.querySelector("[data-hero-image]");
   const lightbox = document.getElementById("lightbox");
 
@@ -30,9 +29,7 @@
     const len = Math.ceil(draw.getTotalLength());
     draw.style.strokeDasharray = String(len);
     draw.style.strokeDashoffset = String(len);
-    if (spark) {
-      spark.style.strokeDasharray = `14 ${len}`;
-    }
+    if (spark) spark.style.strokeDasharray = `14 ${len}`;
   }
 
   function imageReady(img, ms) {
@@ -73,42 +70,44 @@
     const started = performance.now();
     await imageReady(heroImage, 4000);
     const elapsed = performance.now() - started;
-    const wait = Math.max(0, 2500 - elapsed);
+    const wait = Math.max(0, 4000 - elapsed);
     setTimeout(closeIntro, wait);
-    setTimeout(closeIntro, 5000);
+    setTimeout(closeIntro, 8000);
   }
-
-  document.querySelectorAll("[data-intro-skip]").forEach((btn) => {
-    btn.addEventListener("click", closeIntro);
-  });
 
   startIntro();
 
-  const onScroll = () => {
-    if (!header) return;
-    header.classList.toggle("is-solid", window.scrollY > 24);
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-
-  if (navToggle && nav) {
-    const setOpen = (open) => {
-      nav.classList.toggle("is-open", open);
+  const setMenu = (open) => {
+    if (!menu || !navToggle) return;
+    if (open) menu.hidden = false;
+    requestAnimationFrame(() => {
+      menu.classList.toggle("is-open", open);
       navToggle.classList.toggle("is-open", open);
       navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    };
-    navToggle.addEventListener("click", () => setOpen(!nav.classList.contains("is-open")));
-    nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+      body.classList.toggle("is-menu", open);
+      if (!open) {
+        const hide = () => {
+          if (!menu.classList.contains("is-open")) menu.hidden = true;
+        };
+        if (reduce) hide();
+        else setTimeout(hide, 450);
+      }
+    });
+  };
+
+  if (navToggle && menu) {
+    navToggle.addEventListener("click", () => setMenu(!menu.classList.contains("is-open")));
+    menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
   }
 
-  if (heroVisual && !reduce) {
+  if (poster && !reduce) {
     let ticking = false;
     const update = () => {
       ticking = false;
       const y = window.scrollY;
       const h = Math.max(window.innerHeight, 1);
       const p = Math.min(1, Math.max(0, y / h));
-      heroVisual.style.transform = `translate3d(0, ${p * 6}%, 0) scale(${1 + p * 0.08})`;
+      poster.style.setProperty("--poster-scale", (1 + p * 0.045).toFixed(4));
     };
     window.addEventListener(
       "scroll",
@@ -172,7 +171,7 @@
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       if (lightbox && !lightbox.hidden) closeLight();
-      closeIntro();
+      if (menu && menu.classList.contains("is-open")) setMenu(false);
     }
   });
 

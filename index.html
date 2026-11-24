@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VII The Game — Proyecto de fan no oficial</title>
   <meta name="description" content="Página de fan no oficial de un GTA VII ficticio. No está afiliada con Rockstar Games ni Take-Two Interactive.">
-  <meta name="theme-color" content="#13131f">
+  <meta name="theme-color" content="#14132a">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://viithegame.vercel.app/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -21,7 +21,7 @@
   <link rel="preload" as="image" href="assets/hero.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="is-intro">
@@ -53,72 +53,101 @@
         <path class="star-path star-draw" d="M 50.0,13.0 L 58.699,38.027 L 85.189,38.566 L 64.076,54.573 L 71.748,79.934 L 50.0,64.8 L 28.252,79.934 L 35.924,54.573 L 14.811,38.566 L 41.301,38.027 Z"/>
         <path class="star-path star-spark" d="M 50.0,13.0 L 58.699,38.027 L 85.189,38.566 L 64.076,54.573 L 71.748,79.934 L 50.0,64.8 L 28.252,79.934 L 35.924,54.573 L 14.811,38.566 L 41.301,38.027 Z"/>
       </svg>
-      <button type="button" class="intro-skip" data-intro-skip>Saltar</button>
     </div>
   </div>
 
-  <header class="site-header" id="top">
-    <a class="logo" href="#inicio" aria-label="VII The Game, ir al inicio">
-      <span class="logo-mark" aria-hidden="true">VII</span>
-      <span class="logo-text">The Game</span>
-    </a>
-    <nav class="nav" id="nav" aria-label="Principal">
-      <a href="#trailer">Tráiler</a>
-      <a href="#personajes">Personajes</a>
-      <a href="#lugares">Lugares</a>
-      <a href="#proximamente">Próximamente</a>
-    </nav>
-    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav" data-nav-toggle>
-      <span class="sr-only">Menú</span>
-      <span aria-hidden="true"></span>
-    </button>
-  </header>
+  <div class="first-screen" id="inicio">
+    <div class="promo-banner">
+      <svg class="banner-art" viewBox="0 0 1440 70" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <defs>
+          <g id="palm">
+            <path d="M21 70 C20 52 21.8 33 20.2 18.5 L23.6 18.2 C22.2 33 24 52 23 70 Z"/>
+            <path d="M22 18 C10 16 -2 24 -10 38 C6 26 14 21 22 19 Z"/>
+            <path d="M22 17 C12 8 0 6 -8 14 C8 12 16 16 22 18 Z"/>
+            <path d="M22 16 C16 3 6 -3 -4 2 C10 5 18 12 22 16 Z"/>
+            <path d="M22 16 C22 3 18 -6 12 -9 C17 0 20 10 22 16 Z"/>
+            <path d="M22 16 C28 3 40 -3 52 3 C36 6 26 12 22 16 Z"/>
+            <path d="M22 17 C34 8 48 7 58 16 C40 13 30 16 22 18 Z"/>
+            <path d="M22 19 C36 16 50 25 60 40 C42 26 32 21 22 19 Z"/>
+          </g>
+          <g id="bird">
+            <path d="M1 20 C12 12 22 7 30 14 C35 5 50 2 68 9 C52 11 42 16 32 24 C28 16 14 18 1 20 Z"/>
+          </g>
+        </defs>
+        <g class="silhouettes" fill="#3a1848">
+          <use href="#palm" x="8" y="8" transform="scale(1.05) rotate(-6 30 70)"/>
+          <use href="#palm" x="70" y="16" transform="scale(0.86) rotate(5 90 70)" opacity="0.85"/>
+          <use href="#palm" x="128" y="4" transform="scale(1.12) rotate(-3 150 70)"/>
+          <use href="#palm" x="200" y="20" transform="scale(0.7) rotate(8 220 70)" opacity="0.75"/>
+          <use href="#bird" x="290" y="14" transform="scale(0.85)"/>
+          <use href="#palm" x="1080" y="18" transform="scale(0.72) rotate(-8 1100 70)" opacity="0.8"/>
+          <use href="#palm" x="1148" y="6" transform="scale(1.08) rotate(4 1170 70)"/>
+          <use href="#palm" x="1220" y="14" transform="scale(0.9) rotate(-4 1240 70)" opacity="0.9"/>
+          <use href="#palm" x="1290" y="2" transform="scale(1.18) rotate(3 1315 70)"/>
+          <use href="#palm" x="1368" y="16" transform="scale(0.8) rotate(-6 1388 70)" opacity="0.82"/>
+        </g>
+      </svg>
+      <p class="banner-text">Grand Theft Auto VII · Próximamente</p>
+    </div>
 
-  <main id="inicio">
-    <section class="hero" aria-label="Portada">
-      <div class="hero-visual" data-hero-visual>
-        <picture>
-          <source srcset="assets/hero.webp" type="image/webp">
-          <img src="assets/hero.jpg" alt="Collage al atardecer: un helicóptero sobre la ciudad, una pareja, un yate junto al muelle, un letrero de Vinewood y un siete romano en el centro." width="1665" height="944" fetchpriority="high" decoding="async" data-hero-image>
-        </picture>
-      </div>
-      <div class="hero-veil" aria-hidden="true"></div>
-      <div class="hero-content">
-        <p class="eyebrow">Proyecto de fan · No oficial</p>
-        <h1 class="sr-only">VII The Game</h1>
-        <div class="wordmark" aria-hidden="true">
-          <svg viewBox="0 0 756 260" class="wordmark-svg" focusable="false">
-            <defs>
-              <linearGradient id="viiFill" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#ffd0e8"/>
-                <stop offset="38%" stop-color="#ff8cc8"/>
-                <stop offset="72%" stop-color="#c084fc"/>
-                <stop offset="100%" stop-color="#7c3aed"/>
-              </linearGradient>
-              <filter id="viiSoft" x="-8%" y="-8%" width="116%" height="116%">
-                <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#2a1038" flood-opacity="0.55"/>
-              </filter>
-            </defs>
-            <g filter="url(#viiSoft)" fill="url(#viiFill)" stroke="#ffffff" stroke-width="11" stroke-linejoin="miter" stroke-miterlimit="2.2" paint-order="stroke fill">
-              <path d="M18 22 H132 L214 198 L296 22 H410 L246 238 H178 Z"/>
-              <path d="M454 22 H556 L580 48 V238 H454 Z"/>
-              <path d="M608 22 H710 L734 48 V238 H608 Z"/>
-            </g>
-          </svg>
-          <p class="wordmark-sub">The Game</p>
+    <header class="site-header">
+      <a class="logo" href="#inicio" aria-label="VII The Game, ir al inicio">
+        <svg class="logo-vii" viewBox="0 0 86 36" aria-hidden="true" focusable="false">
+          <path d="M1 2 H14.5 L25 28 L35.5 2 H49 L29.5 34 H20.5 Z"/>
+          <path d="M54 2 H65 V34 H54 Z"/>
+          <path d="M71 2 H82 V34 H71 Z"/>
+        </svg>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="menu" data-nav-toggle>
+        <span class="sr-only">Menú</span>
+        <span class="bar" aria-hidden="true"></span>
+        <span class="bar" aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <section class="landing" aria-label="Portada">
+      <figure class="poster" data-poster>
+        <div class="poster-frame">
+          <picture>
+            <source srcset="assets/hero.webp" type="image/webp">
+            <img src="assets/hero.jpg" alt="Collage al atardecer: un helicóptero sobre la ciudad, una pareja, un yate junto al muelle, un letrero de Vinewood y un siete romano en el centro." width="1665" height="944" fetchpriority="high" decoding="async" data-hero-image>
+          </picture>
         </div>
-        <p class="hero-lead">Una ciudad al atardecer.<br>Una deuda que no se olvida.</p>
-        <div class="hero-actions">
-          <a class="btn btn-solid" href="#trailer">Ver el tráiler</a>
-          <a class="btn btn-ghost" href="#personajes">Conocer a los personajes</a>
+      </figure>
+
+      <div class="landing-meta">
+        <div class="landing-kicker">
+          <p class="kicker-soon">Próximamente</p>
+          <p class="kicker-sub">Bienvenido a Vinewood</p>
         </div>
+        <a class="btn-reserve" href="#proximamente">Reservar ahora</a>
+        <p class="landing-platforms">
+          <span>PS5</span>
+          <span>Xbox Series X|S</span>
+          <span>PC</span>
+        </p>
       </div>
-      <a class="scroll-hint" href="#trailer" aria-label="Bajar al tráiler">
-        <span>Desliza</span>
-        <i aria-hidden="true"></i>
+
+      <a class="scroll-chevron" href="#trailer" aria-label="Bajar al tráiler">
+        <svg viewBox="0 0 24 14" aria-hidden="true" focusable="false">
+          <path d="M2 2 L12 12 L22 2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </a>
     </section>
+  </div>
 
+  <nav class="menu" id="menu" hidden>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#trailer">Tráiler</a></li>
+      <li><a href="#personajes">Personajes</a></li>
+      <li><a href="#lugares">Lugares</a></li>
+      <li><a href="#proximamente">Próximamente</a></li>
+    </ul>
+    <p class="menu-note">Proyecto de fan no oficial</p>
+  </nav>
+
+  <main>
     <section class="section trailer" id="trailer">
       <div class="section-head reveal">
         <p class="idx">01</p>
@@ -285,14 +314,14 @@
         <p class="eyebrow">Lanzamiento</p>
         <h2>Próximamente</h2>
         <p class="lede">Una visión de fan de lo que podría ser GTA VII. Fecha por anunciarse.</p>
-        <p class="platforms">PlayStation 5 · Xbox Series X|S · PC</p>
+        <p class="platforms">PS5 · Xbox Series X|S · PC</p>
         <form class="soon-form" id="aviso-form" novalidate>
           <p class="form-note">Este aviso es solo de esta página de fan. No está vinculado a un lanzamiento oficial.</p>
           <label class="sr-only" for="aviso-nombre">Nombre</label>
           <input id="aviso-nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" maxlength="80">
           <label class="sr-only" for="aviso-correo">Correo</label>
           <input id="aviso-correo" name="correo" type="email" autocomplete="email" placeholder="Tu correo" required maxlength="120">
-          <button type="submit" class="btn btn-solid">Quiero enterarme</button>
+          <button type="submit" class="btn-reserve">Quiero enterarme</button>
           <p class="form-status" data-form-status role="status" aria-live="polite"></p>
         </form>
       </div>
