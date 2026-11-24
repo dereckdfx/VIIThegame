@@ -220,15 +220,17 @@ body.is-menu .site-header {
   font-size: 14px;
 }
 
-.logo { display: inline-flex; align-items: center; text-decoration: none; }
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  line-height: 0;
+}
 
-.logo-vii {
-  font-family: var(--font-mark);
-  font-size: 2rem;
-  font-weight: 400;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  color: #fff;
+.logo-mark {
+  display: block;
+  height: 32px;
+  width: auto;
 }
 
 .nav-toggle {
@@ -860,6 +862,8 @@ body.is-menu .site-header {
 
   .site-header { padding: 0 1.15rem; }
 
+  .logo-mark { height: 30px; }
+
   .landing {
     justify-content: flex-start;
     text-align: center;
@@ -1038,10 +1042,11 @@ body.is-menu .site-header {
 }
 
 .menu-vii {
-  width: min(92%, 38rem);
+  display: block;
+  width: min(86%, 34rem);
   height: auto;
   margin-top: 2vh;
-  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.35));
 }
 
 .menu-art-meta {
@@ -1744,11 +1749,13 @@ body.is-menu .site-header {
 
 .footer-vii {
   margin: 0;
-  font-family: var(--font-mark);
-  font-size: clamp(3.4rem, 8vw, 6.5rem);
-  line-height: 0.8;
-  letter-spacing: 0.04em;
-  color: #fff;
+  line-height: 0;
+}
+
+.footer-vii img {
+  display: block;
+  height: clamp(2.8rem, 7vw, 4.6rem);
+  width: auto;
 }
 
 .news-box {

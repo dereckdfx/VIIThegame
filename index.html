@@ -91,8 +91,11 @@
     </div>
 
     <header class="site-header">
-      <a class="logo" href="#inicio" aria-label="VII The Game, ir al inicio">
-        <span class="logo-vii" aria-hidden="true">VII</span>
+      <a class="logo" href="#inicio">
+        <picture>
+          <source srcset="assets/vii-logo.webp" type="image/webp">
+          <img class="logo-mark" src="assets/vii-logo.png" alt="VII" width="1022" height="533">
+        </picture>
       </a>
       <div class="header-actions">
         <a class="btn-reserve header-reserve" href="#proximamente" data-i18n="reserve">Reservar ahora</a>
@@ -137,21 +140,10 @@
 
   <nav class="menu" id="menu" hidden>
     <div class="menu-art">
-      <svg class="menu-vii" viewBox="0 0 780 340" role="img" aria-label="VII">
-        <defs>
-          <pattern id="viiLeaves" patternUnits="userSpaceOnUse" width="52" height="62" patternTransform="rotate(-24)">
-            <rect width="52" height="62" fill="#2a163c"/>
-            <path fill="#f0d8ea" d="M26 4 C22 16 16 24 8 32 C18 28 24 22 26 14 C28 22 34 28 44 32 C36 24 30 16 26 4 Z"/>
-            <path fill="#e4c4dc" d="M26 14 C20 26 12 36 6 46 C16 40 22 32 26 24 C30 32 36 40 46 46 C40 36 32 26 26 14 Z"/>
-            <path fill="#f7e6f2" d="M26 8 C25 22 24 36 26 56 C28 36 27 22 26 8 Z"/>
-          </pattern>
-        </defs>
-        <g fill="url(#viiLeaves)" stroke="#ffffff" stroke-width="11" stroke-linejoin="round" stroke-linecap="round" paint-order="stroke fill">
-          <path d="M16 28 H122 L198 250 L274 28 H380 L232 312 H164 Z"/>
-          <path d="M424 28 H500 V56 H476 V284 H500 V312 H424 V284 H448 V56 H424 Z"/>
-          <path d="M548 28 H624 V56 H600 V284 H624 V312 H548 V284 H572 V56 H548 Z"/>
-        </g>
-      </svg>
+      <picture>
+        <source srcset="assets/vii-logo.webp" type="image/webp">
+        <img class="menu-vii" src="assets/vii-logo.png" alt="VII" width="1022" height="533">
+      </picture>
       <div class="menu-art-meta">
         <div class="landing-kicker">
           <p class="kicker-soon" data-i18n="soon">Próximamente</p>
@@ -683,7 +675,12 @@
   </main>
 
   <footer class="site-footer">
-    <p class="footer-vii">VII</p>
+    <p class="footer-vii">
+      <picture>
+        <source srcset="assets/vii-logo.webp" type="image/webp">
+        <img src="assets/vii-logo.png" alt="VII" width="1022" height="533">
+      </picture>
+    </p>
     <form class="news-box" id="news-form" novalidate>
       <p class="news-box-title">Recibe las noticias de VII</p>
       <p class="news-box-note">Solo se guarda en este dispositivo. No es un boletín oficial.</p>
