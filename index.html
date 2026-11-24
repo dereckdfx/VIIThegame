@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VII The Game — Proyecto de fan no oficial</title>
+  <meta name="description" content="Página de fan no oficial de un GTA VII ficticio. No está afiliada con Rockstar Games ni Take-Two Interactive.">
+  <meta name="theme-color" content="#13131f">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://viithegame.vercel.app/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/og.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VII The Game — Proyecto de fan no oficial">
+  <meta property="og:description" content="Una visión de fan de una ciudad al atardecer. No oficial. No afiliado con Rockstar Games ni Take-Two Interactive.">
+  <meta property="og:image" content="assets/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VII The Game — Proyecto de fan no oficial">
+  <meta name="twitter:description" content="Una visión de fan de una ciudad al atardecer. Proyecto no oficial.">
+  <meta name="twitter:image" content="assets/og.jpg">
+  <link rel="preload" as="image" href="assets/hero.webp" type="image/webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="is-intro">
+  <div id="intro" class="intro" role="dialog" aria-modal="true" aria-label="Introducción">
+    <div class="intro-inner">
+      <svg class="intro-star" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="starStroke" x1="50" y1="10" x2="50" y2="86" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#ffd0ec"/>
+            <stop offset="55%" stop-color="#e8b0ff"/>
+            <stop offset="100%" stop-color="#b9a0ff"/>
+          </linearGradient>
+          <filter id="starGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="1.8" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <filter id="sparkGlow" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur stdDeviation="2.6" result="blur"/>
+            <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0.35  0 1 0 0 0.15  0 0 1 0 0.45  0 0 0 1.4 0" result="tint"/>
+            <feMerge>
+              <feMergeNode in="tint"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <path class="star-path star-draw" d="M 50.0,13.0 L 58.699,38.027 L 85.189,38.566 L 64.076,54.573 L 71.748,79.934 L 50.0,64.8 L 28.252,79.934 L 35.924,54.573 L 14.811,38.566 L 41.301,38.027 Z"/>
+        <path class="star-path star-spark" d="M 50.0,13.0 L 58.699,38.027 L 85.189,38.566 L 64.076,54.573 L 71.748,79.934 L 50.0,64.8 L 28.252,79.934 L 35.924,54.573 L 14.811,38.566 L 41.301,38.027 Z"/>
+      </svg>
+      <button type="button" class="intro-skip" data-intro-skip>Saltar</button>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <a class="logo" href="#inicio" aria-label="VII The Game, ir al inicio">
+      <span class="logo-mark" aria-hidden="true">VII</span>
+      <span class="logo-text">The Game</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#trailer">Tráiler</a>
+      <a href="#personajes">Personajes</a>
+      <a href="#lugares">Lugares</a>
+      <a href="#proximamente">Próximamente</a>
+    </nav>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav" data-nav-toggle>
+      <span class="sr-only">Menú</span>
+      <span aria-hidden="true"></span>
+    </button>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-label="Portada">
+      <div class="hero-visual" data-hero-visual>
+        <picture>
+          <source srcset="assets/hero.webp" type="image/webp">
+          <img src="assets/hero.jpg" alt="Collage al atardecer: un helicóptero sobre la ciudad, una pareja, un yate junto al muelle, un letrero de Vinewood y un siete romano en el centro." width="1665" height="944" fetchpriority="high" decoding="async" data-hero-image>
+        </picture>
+      </div>
+      <div class="hero-veil" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Proyecto de fan · No oficial</p>
+        <h1 class="sr-only">VII The Game</h1>
+        <div class="wordmark" aria-hidden="true">
+          <svg viewBox="0 0 756 260" class="wordmark-svg" focusable="false">
+            <defs>
+              <linearGradient id="viiFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffd0e8"/>
+                <stop offset="38%" stop-color="#ff8cc8"/>
+                <stop offset="72%" stop-color="#c084fc"/>
+                <stop offset="100%" stop-color="#7c3aed"/>
+              </linearGradient>
+              <filter id="viiSoft" x="-8%" y="-8%" width="116%" height="116%">
+                <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#2a1038" flood-opacity="0.55"/>
+              </filter>
+            </defs>
+            <g filter="url(#viiSoft)" fill="url(#viiFill)" stroke="#ffffff" stroke-width="11" stroke-linejoin="miter" stroke-miterlimit="2.2" paint-order="stroke fill">
+              <path d="M18 22 H132 L214 198 L296 22 H410 L246 238 H178 Z"/>
+              <path d="M454 22 H556 L580 48 V238 H454 Z"/>
+              <path d="M608 22 H710 L734 48 V238 H608 Z"/>
+            </g>
+          </svg>
+          <p class="wordmark-sub">The Game</p>
+        </div>
+        <p class="hero-lead">Una ciudad al atardecer.<br>Una deuda que no se olvida.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#trailer">Ver el tráiler</a>
+          <a class="btn btn-ghost" href="#personajes">Conocer a los personajes</a>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#trailer" aria-label="Bajar al tráiler">
+        <span>Desliza</span>
+        <i aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <section class="section trailer" id="trailer">
+      <div class="section-head reveal">
+        <p class="idx">01</p>
+        <div>
+          <p class="eyebrow">Cinta</p>
+          <h2>Tráiler</h2>
+          <p class="lede">Aún no hay un tráiler. Cuando exista, lo verás primero aquí.</p>
+        </div>
+      </div>
+      <div class="trailer-frame reveal" data-trailer>
+        <button type="button" class="trailer-play" data-trailer-open aria-label="Reproducir tráiler, próximamente">
+          <picture>
+            <source srcset="assets/hero.webp" type="image/webp">
+            <img src="assets/hero.jpg" alt="Fotograma de portada: el collage de la ciudad al atardecer." width="1665" height="944" loading="lazy">
+          </picture>
+          <span class="play-btn" aria-hidden="true">
+            <svg viewBox="0 0 72 72" focusable="false">
+              <circle cx="36" cy="36" r="34" fill="none" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M30 22 L52 36 L30 50 Z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span class="trailer-caption">Próximamente</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section characters" id="personajes">
+      <div class="section-head reveal">
+        <p class="idx">02</p>
+        <div>
+          <p class="eyebrow">Elenco</p>
+          <h2>Personajes</h2>
+          <p class="lede">Nadie llega limpio a esta costa. Cada uno trae un plan, y la ciudad ya tiene el suyo.</p>
+        </div>
+      </div>
+
+      <article class="cast-row reveal">
+        <figure class="cast-shot">
+          <picture>
+            <source srcset="assets/hero.webp" type="image/webp">
+            <img class="crop crop-lila" src="assets/hero.jpg" alt="Lila Quinn, de cabello rubio, mira por encima del hombro con una camiseta blanca." width="1665" height="944" loading="lazy">
+          </picture>
+        </figure>
+        <div class="cast-copy">
+          <p class="cast-tag">Vinewood</p>
+          <h3>Lila Quinn</h3>
+          <p>Llegó con un apellido prestado y una idea precisa de lo que quiere. Frente a las cámaras sonríe; detrás de ellas, lleva la cuenta de cada favor.</p>
+        </div>
+      </article>
+
+      <article class="cast-row invert reveal">
+        <figure class="cast-shot">
+          <picture>
+            <source srcset="assets/hero.webp" type="image/webp">
+            <img class="crop crop-adrian" src="assets/hero.jpg" alt="Adrián Sol, con camiseta blanca, observa el horizonte al atardecer." width="1665" height="944" loading="lazy">
+          </picture>
+        </figure>
+        <div class="cast-copy">
+          <p class="cast-tag">Pista</p>
+          <h3>Adrián Sol</h3>
+          <p>Fue el mejor en las acrobacias hasta que una caída le cambió el contrato. Ahora conduce como si el asfalto aún le debiera algo.</p>
+        </div>
+      </article>
+
+      <article class="cast-row reveal">
+        <figure class="cast-shot">
+          <picture>
+            <source srcset="assets/hero.webp" type="image/webp">
+            <img class="crop crop-cesar" src="assets/hero.jpg" alt="César Morel, de traje blanco y gafas, sostiene un habano." width="1665" height="944" loading="lazy">
+          </picture>
+        </figure>
+        <div class="cast-copy">
+          <p class="cast-tag">Alta sociedad</p>
+          <h3>César Morel</h3>
+          <p>Traje blanco, habano y una agenda que no se discute. Dueño de salones, de silencios y de la mitad de los rumores que importan.</p>
+        </div>
+      </article>
+
+      <article class="cast-row invert reveal">
+        <figure class="cast-shot">
+          <picture>
+            <source srcset="assets/hero.webp" type="image/webp">
+            <img class="crop crop-nadia" src="assets/hero.jpg" alt="Nadia Kerr, con gafas de sol y un abrigo de piel sobre un bikini negro." width="1665" height="944" loading="lazy">
+          </picture>
+        </figure>
+        <div class="cast-copy">
+          <p class="cast-tag">La costa</p>
+          <h3>Nadia Kerr</h3>
+          <p>Se le reconoce por el abrigo y por no pedir permiso. Si hay una fiesta en el muelle, Nadia ya estaba ahí antes de que alguien enviara la invitación.</p>
+        </div>
+      </article>
+
+      <article class="cast-row reveal">
+        <figure class="cast-shot">
+          <picture>
+            <source srcset="assets/hero.webp" type="image/webp">
+            <img class="crop crop-roman" src="assets/hero.jpg" alt="Román Vélez, tatuado, con gafas y una cadena, mira de frente." width="1665" height="944" loading="lazy">
+          </picture>
+        </figure>
+        <div class="cast-copy">
+          <p class="cast-tag">El puerto</p>
+          <h3>Román Vélez</h3>
+          <p>Creció entre el muelle y las patrullas. Los tatuajes no son adorno: son la lista de lo que ya no está dispuesto a perder.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section places" id="lugares">
+      <div class="section-head reveal">
+        <p class="idx">03</p>
+        <div>
+          <p class="eyebrow">Mapa</p>
+          <h2>Lugares</h2>
+          <p class="lede">Tres maneras de perderse. En todas, la ciudad te ve primero.</p>
+        </div>
+      </div>
+
+      <div class="place-stack">
+        <article class="place reveal">
+          <figure>
+            <picture>
+              <source srcset="assets/hero.webp" type="image/webp">
+              <img class="crop crop-vinewood" src="assets/hero.jpg" alt="Colinas al atardecer con el letrero de Vinewood y palmeras." width="1665" height="944" loading="lazy">
+            </picture>
+            <figcaption>
+              <p class="idx">I</p>
+              <h3>Vinewood</h3>
+              <p>Las letras no se apagan nunca. Abajo, las promesas duran menos que una noche.</p>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="place reveal">
+          <figure>
+            <picture>
+              <source srcset="assets/hero.webp" type="image/webp">
+              <img class="crop crop-muelle" src="assets/hero.jpg" alt="Una lancha rápida frente al muelle, con una noria al fondo." width="1665" height="944" loading="lazy">
+            </picture>
+            <figcaption>
+              <p class="idx">II</p>
+              <h3>El muelle y la playa</h3>
+              <p>La noria, la madera mojada y el agua tibia. Aquí se llega a celebrar y, a veces, a desaparecer.</p>
+            </figcaption>
+          </figure>
+        </article>
+        <article class="place reveal">
+          <figure>
+            <picture>
+              <source srcset="assets/hero.webp" type="image/webp">
+              <img class="crop crop-centro" src="assets/hero.jpg" alt="Patrullas y un helicóptero sobre el centro de la ciudad, de noche." width="1665" height="944" loading="lazy">
+            </picture>
+            <figcaption>
+              <p class="idx">III</p>
+              <h3>El centro de noche</h3>
+              <p>Sirenas, puentes y un foco que no pregunta nombres. El centro no duerme: vigila.</p>
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section class="section soon" id="proximamente">
+      <div class="soon-card reveal">
+        <p class="idx">04</p>
+        <p class="eyebrow">Lanzamiento</p>
+        <h2>Próximamente</h2>
+        <p class="lede">Una visión de fan de lo que podría ser GTA VII. Fecha por anunciarse.</p>
+        <p class="platforms">PlayStation 5 · Xbox Series X|S · PC</p>
+        <form class="soon-form" id="aviso-form" novalidate>
+          <p class="form-note">Este aviso es solo de esta página de fan. No está vinculado a un lanzamiento oficial.</p>
+          <label class="sr-only" for="aviso-nombre">Nombre</label>
+          <input id="aviso-nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" maxlength="80">
+          <label class="sr-only" for="aviso-correo">Correo</label>
+          <input id="aviso-correo" name="correo" type="email" autocomplete="email" placeholder="Tu correo" required maxlength="120">
+          <button type="submit" class="btn btn-solid">Quiero enterarme</button>
+          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-mark">VII The Game</p>
+    <p class="disclaimer">Proyecto de fan no oficial. No afiliado con Rockstar Games ni Take-Two Interactive.</p>
+    <p class="footer-legal">Grand Theft Auto, GTA y los demás nombres y marcas relacionados son propiedad de sus respectivos dueños. Este sitio es un homenaje de fan, hecho de manera independiente y sin fines de lucro.</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+      <button type="button" class="lightbox-close" data-trailer-close aria-label="Cerrar">Cerrar</button>
+      <div class="lightbox-stage">
+        <picture>
+          <source srcset="assets/hero.webp" type="image/webp">
+          <img src="assets/hero.jpg" alt="" width="1665" height="944">
+        </picture>
+      </div>
+      <h2 id="lightbox-title">El tráiler se publicará pronto</h2>
+      <p>Todavía no hay un video. Esta es solo una vista de la portada, a la espera de una cinta propia.</p>
+    </div>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
